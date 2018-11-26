@@ -1,8 +1,9 @@
-package bdd.BDD;
+package bdd;
 
 public interface BDD {
     
     // base functions
+
     BDD var();
     
     BDD ithVar(int i);
@@ -12,6 +13,10 @@ public interface BDD {
     BDD getOne();
     
     BDD getZero();
+    
+    BDD high();
+    
+    BDD low();
     
     // algebraic operations
     BDD not();
@@ -42,6 +47,7 @@ public interface BDD {
     
     Iterable<BDD> satAll();
     
+    // free this BDD
     void free();
     
 }
