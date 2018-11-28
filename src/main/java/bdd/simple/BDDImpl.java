@@ -2,38 +2,51 @@ package bdd.simple;
 
 import bdd.BDD;
 
-public class BDDSimple implements BDD {
+public class BDDImpl implements BDD {
     
-    public BDDSimple(int varNum, int numNodes, int numCache) {
-        
+    protected final int id;
+    protected final BDD var;
+    protected final BDD high;
+    protected final BDD low;
+    protected final DDManager dd;
+    
+    public BDDImpl(DDManager dd, int id, BDD var, BDD high, BDD low) {
+        this.dd = dd;
+        this.id = id;
+        this.var = var;
+        this.high = high;
+        this.low = low;
     }
 
     public BDD var() {
-        return null;
+        return var;
     }
 
     public BDD ithVar(int i) {
-        // TODO Auto-generated method stub
-        return null;
+        return dd.ithVar(i);
     }
 
     public int varNum() {
-        // TODO Auto-generated method stub
-        return 0;
+        return dd.varNum();
+    }
+
+    public BDD high() {
+        return high;
+    }
+
+    public BDD low() {
+        return low;
     }
 
     public BDD getOne() {
-        // TODO Auto-generated method stub
-        return null;
+        return dd.getOne();
     }
 
     public BDD getZero() {
-        // TODO Auto-generated method stub
-        return null;
+        return dd.getZero();
     }
 
     public BDD not() {
-        // TODO Auto-generated method stub
         return null;
     }
 
@@ -98,8 +111,8 @@ public class BDDSimple implements BDD {
     }
 
     public void free() {
-        // TODO Auto-generated method stub
         
     }
+
 
 }
